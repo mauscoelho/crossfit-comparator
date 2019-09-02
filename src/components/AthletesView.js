@@ -15,7 +15,7 @@ export const AthletesView = () => {
 
   return (
     <div className="container">
-      <h1>Athletes {"🏋️‍♂️"}</h1>
+      <h1>Crossfit Comparator {"🏋️‍♂️"}</h1>
       <AthletesForm handleSubmit={handleSubmit} />
       {searchTerm ? (
         <Suspense

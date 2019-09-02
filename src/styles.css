@@ -50,7 +50,7 @@ button[type="submit"] {
   font-weight: normal;
 }
 
-.ShowList-wrapper {
+.AthleteList-wrapper {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -81,7 +81,4 @@ button[type="submit"] {
 .athlete__right__details {
   font-size: 12px;
   margin-bottom: 5px;
-}
-a {
-  text-decoration: none;
 }

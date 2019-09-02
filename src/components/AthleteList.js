@@ -11,7 +11,7 @@ function AthleteList({ searchTerm }) {
   const athleteList = athletes.read(searchTerm);
 
   return (
-    <div className="ShowList-wrapper">
+    <div className="AthleteList-wrapper">
       {athleteList.map(item => (
         <Athlete key={item.id} item={item} />
       ))}
