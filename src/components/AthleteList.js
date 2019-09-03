@@ -1,14 +1,24 @@
 import React from "react";
-import { unstable_createResource as createResource } from "react-cache";
-
-import { fetchAthletesBySearchTerm } from "../api/fetchAthletes";
-
+import useFetch from "fetch-suspense";
 import Athlete from "./Athlete";
 
-const athletes = createResource(fetchAthletesBySearchTerm);
+function normalize({ result, year, competition }) {
+  const athletesByYear = result.map(athlete => ({
+    ...athlete,
+    year,
+    competition
+  }));
+  return athletesByYear;
+}
 
 function AthleteList({ searchTerm }) {
-  const athleteList = athletes.read(searchTerm);
+  const year = 2019;
+  const competition = "open";
+  const result = useFetch(
+    `https://cors-anywhere.herokuapp.com/http://games.crossfit.com/competitions/api/v1/competitions/${competition}/${year}/athletes?term=${searchTerm}`
+  );
+  console.log(result);
+  const athleteList = normalize({ result, year, competition });
 
   return (
     <div className="AthleteList-wrapper">

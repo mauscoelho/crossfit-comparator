@@ -5,8 +5,8 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "fetch-suspense": "1.2.0",
     "react": "16.7.0-alpha.2",
-    "react-cache": "2.0.0-alpha.1",
     "react-dom": "16.7.0-alpha.2",
     "react-loader-spinner": "2.3.0",
     "react-scripts": "2.1.1",
@@ -20,5 +20,10 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
