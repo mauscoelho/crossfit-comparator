@@ -11,19 +11,18 @@ function normalize({ result, year, competition }) {
   return athletesByYear;
 }
 
-function AthleteList({ searchTerm }) {
+function AthleteList({ searchTerm, onFollow }) {
   const year = 2019;
   const competition = "open";
   const result = useFetch(
-    `https://cors-anywhere.herokuapp.com/http://games.crossfit.com/competitions/api/v1/competitions/${competition}/${year}/athletes?term=${searchTerm}`
+    `https://yacdn.org/proxy/http://games.crossfit.com/competitions/api/v1/competitions/${competition}/${year}/athletes?term=${searchTerm}`
   );
-  console.log(result);
   const athleteList = normalize({ result, year, competition });
 
   return (
     <div className="AthleteList-wrapper">
       {athleteList.map(item => (
-        <Athlete key={item.id} item={item} />
+        <Athlete key={item.id} item={item} onFollow={onFollow} />
       ))}
     </div>
   );
