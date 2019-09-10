@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "antd";
 
 const Athlete = ({ item, onFollow }) => (
   <div className="show">
@@ -10,12 +11,7 @@ const Athlete = ({ item, onFollow }) => (
         competition: {item.competition}
       </div>
       <div className="show__right__details">year: {item.year}</div>
-      <button
-        onClick={() => onFollow(item.id)}
-        className="show__right__subtitle"
-      >
-        Follow
-      </button>
+      <Button onClick={() => onFollow(item.id)}>Follow</Button>
     </div>
   </div>
 );

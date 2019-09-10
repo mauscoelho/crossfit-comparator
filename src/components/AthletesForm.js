@@ -1,12 +1,15 @@
 import React from "react";
+import { Input } from "antd";
+
+const { Search } = Input;
 
 const AthletesForm = ({ handleSubmit }) => {
   return (
-    <form onSubmit={handleSubmit}>
-      <p>Search for crossfit athletes:</p>
-      <input type="text" name="searchTerm" />
-      <button type="submit">Submit</button>
-    </form>
+    <Search
+      placeholder="Search for a crossfit athlete"
+      onSearch={value => handleSubmit(value)}
+      enterButton
+    />
   );
 };
 

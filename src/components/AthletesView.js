@@ -10,9 +10,8 @@ const AthleteList = lazy(() => import("./AthleteList")); // D3
 export const AthletesView = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [followingAthletes, setfollowingAthletes] = useState([]);
-  const handleSubmit = e => {
-    e.preventDefault();
-    setSearchTerm(e.target.elements.searchTerm.value);
+  const handleSubmit = value => {
+    setSearchTerm(value);
   };
 
   function onFollow(id) {
@@ -23,7 +22,6 @@ export const AthletesView = () => {
 
   return (
     <div className="container">
-      <h1>Crossfit Comparator {"🏋️‍♂️"}</h1>
       <AthletesForm handleSubmit={handleSubmit} />
       {searchTerm ? (
         <Suspense
