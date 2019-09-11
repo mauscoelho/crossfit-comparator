@@ -17,11 +17,11 @@ function AthleteList({ searchTerm, onFollow }) {
   const result = useFetch(
     `https://yacdn.org/proxy/http://games.crossfit.com/competitions/api/v1/competitions/${competition}/${year}/athletes?term=${searchTerm}`
   );
-  const athleteList = normalize({ result, year, competition });
+  const athletes = normalize({ result, year, competition });
 
   return (
-    <div className="AthleteList-wrapper">
-      {athleteList.map(item => (
+    <div style={{ paddingTop: 10 }}>
+      {athletes.map(item => (
         <Athlete key={item.id} item={item} onFollow={onFollow} />
       ))}
     </div>

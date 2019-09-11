@@ -1,5 +1,6 @@
 import React from "react";
 import useFetch from "fetch-suspense";
+import { Card, Avatar } from "antd";
 
 function FollowingAthlete({ id }) {
   console.log(id);
@@ -8,37 +9,27 @@ function FollowingAthlete({ id }) {
   );
   console.log(athlete);
   return (
-    <div className="athlete">
-      <div className="athlete__left">
-        <img src={athlete.profilePicS3key} alt="poster" />
-      </div>
-      <div className="athlete__right">
-        <div className="athlete__right__title">{athlete.competitorName}</div>
-        {athlete.stats.open.map(open => (
+    <Card style={{ marginBottom: 4 }}>
+      <Card.Meta
+        avatar={<Avatar src={athlete.profilePicS3key} />}
+        title={athlete.competitorName}
+      />
+      {athlete.stats.open.map(open => (
+        <div>
+          <div>{open.year}</div>
           <div>
-            <div className="athlete__right__subtitle">{open.year}</div>
-            <div className="athlete__score">
-              {open.worldWide.scores.map(score => (
-                <div className="athlete__score__item">
-                  <div className="athlete__right__details">
-                    wod: {score.ordinal}
-                  </div>
-                  <div className="athlete__right__details">
-                    rank: {score.rank}
-                  </div>
-                  <div className="athlete__right__details">
-                    score: {score.scoreDisplay}
-                  </div>
-                  <div className="athlete__right__details">
-                    scaled: {score.scaled === "0" ? "no" : "yes"}
-                  </div>
-                </div>
-              ))}
-            </div>
+            {open.worldWide.scores.map(score => (
+              <div>
+                <div>wod: {score.ordinal}</div>
+                <div>rank: {score.rank}</div>
+                <div>score: {score.scoreDisplay}</div>
+                <div>scaled: {score.scaled === "0" ? "no" : "yes"}</div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
+      ))}
+    </Card>
   );
 }
 

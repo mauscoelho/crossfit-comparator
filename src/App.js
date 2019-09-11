@@ -1,17 +1,17 @@
 import React from "react";
 import { Layout } from "antd";
-import { AthletesView } from "./components/AthletesView";
+import { Main } from "./components/Main";
 
 const { Header, Footer, Content } = Layout;
 
 const App = () => {
   return (
-    <Layout>
+    <Layout style={{ minHeight: "100vh" }}>
       <Header>
         <h1 style={{ color: "white" }}>Crossfit Comparator {"🏋️‍♂️"}</h1>
       </Header>
-      <Content>
-        <AthletesView />
+      <Content style={{ display: "flex", flex: 1 }}>
+        <Main />
       </Content>
       <Footer style={{ textAlign: "center" }}>
         Made with {"♥"} by @mauscoelho
