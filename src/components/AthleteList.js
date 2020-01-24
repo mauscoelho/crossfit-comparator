@@ -15,7 +15,7 @@ function AthleteList({ searchTerm, onFollow }) {
   const year = 2019;
   const competition = "open";
   const result = useFetch(
-    `https://yacdn.org/proxy/http://games.crossfit.com/competitions/api/v1/competitions/${competition}/${year}/athletes?term=${searchTerm}`
+    `https://cf-comp-proxy.herokuapp.com/https://games.crossfit.com/competitions/api/v1/competitions/${competition}/${year}/athletes?term=${searchTerm}`
   );
   const athletes = normalize({ result, year, competition });
 
