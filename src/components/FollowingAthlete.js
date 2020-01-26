@@ -27,7 +27,6 @@ function FollowingAthlete({ id }) {
                     <Descriptions.Item label="Rank">{score.rank}</Descriptions.Item>
                   </Descriptions>
                   {score.scaled === "0" ? <Tag color="blue">RX</Tag> : <Tag color="red">Scale</Tag>}
-                  <Divider />
                 </div>
               ))}
             </div>
